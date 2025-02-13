@@ -3,7 +3,7 @@ package br.com.alura.musicasBD.dados
 import br.com.alura.musicasBD.extensions.toEntity
 import br.com.alura.musicasBD.extensions.toModel
 import br.com.alura.musicasBD.modelos.Banda
-import javax.persistence.EntityManager
+import jakarta.persistence.EntityManager
 
 class BandaDAO(manager: EntityManager)
     : DAO<Banda, BandaEntity>(manager, BandaEntity::class.java)

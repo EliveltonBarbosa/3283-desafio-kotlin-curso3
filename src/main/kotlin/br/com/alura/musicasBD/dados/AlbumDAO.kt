@@ -3,7 +3,7 @@ package br.com.alura.musicasBD.dados
 import br.com.alura.musicasBD.extensions.toEntity
 import br.com.alura.musicasBD.extensions.toModel
 import br.com.alura.musicasBD.modelos.Album
-import javax.persistence.EntityManager
+import jakarta.persistence.EntityManager
 
 class AlbumDAO(manager: EntityManager)
     : DAO<Album,  AlbumEntity>(manager, AlbumEntity::class.java) {

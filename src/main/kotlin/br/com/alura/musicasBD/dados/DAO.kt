@@ -1,6 +1,6 @@
 package br.com.alura.musicasBD.dados
 
-import javax.persistence.EntityManager
+import jakarta.persistence.EntityManager
 
 abstract class DAO<TModel,TEntity>(
     val manager: EntityManager,

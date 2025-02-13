@@ -4,7 +4,6 @@ import br.com.alura.musicasBD.dados.AlbumDAO
 import br.com.alura.musicasBD.dados.Banco
 import br.com.alura.musicasBD.dados.BandaDAO
 import br.com.alura.musicasBD.modelos.Album
-import br.com.alura.musicasBD.modelos.Banda
 
 fun main(){
 
@@ -12,18 +11,17 @@ fun main(){
 
     val albumDAO = AlbumDAO(manager)
     val bandaDAO = BandaDAO(manager)
-    val titas = bandaDAO.recuperarPeloId(1)
 
-    val goBack = Album("Go Back", titas)
-    val cabecaDinossauro = Album("Cabeça Dinossauro", titas)
+    manager.use {
+        val titas = bandaDAO.recuperarPeloId(1)
 
-    albumDAO.adicionar(cabecaDinossauro)
-    albumDAO.adicionar(goBack)
+        val goBack = Album("Go Back", titas)
+        val cabecaDinossauro = Album("Cabeça Dinossauro", titas)
 
-    val listaAlbuns = albumDAO.getLista()
-    println(listaAlbuns)
+        albumDAO.adicionar(cabecaDinossauro)
+        albumDAO.adicionar(goBack)
 
-    manager.close()
-
-
+        val listaAlbuns = albumDAO.getLista()
+        println(listaAlbuns)
+    }
 }
